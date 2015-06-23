@@ -16,7 +16,11 @@ val utilVersion = "6.24.0"
 
 val finagleVersion = "6.25.0"
 
+val playVersion = "2.3.9"
+
 libraryDependencies ++= Seq(
+  // play
+  "com.typesafe.play" %% "play-json" % playVersion,
   // guava
   "com.google.guava" % "guava" % guavaVersion,
   // typesafe config
