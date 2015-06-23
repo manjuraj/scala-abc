@@ -4,21 +4,25 @@ version := "1.0.0"
 
 organization := "com.example"
 
-scalaVersion := "2.10.4"
-
-val scalazVersion = "7.1.1"
+scalaVersion := "2.10.5"
 
 val configVersion = "1.2.1"
 
-val utilVersion = "6.23.0"
+val scalazVersion = "7.1.3"
+
+val utilVersion = "6.24.0"
+
+val finagleVersion = "6.25.0"
 
 libraryDependencies ++= Seq(
   // typesafe config
   "com.typesafe" % "config" % configVersion,
   // twitter util-*
-  "com.twitter" % "util-core_2.10" % utilVersion,
-  "com.twitter" % "util-app_2.10" % utilVersion,
-  "com.twitter" % "util-logging_2.10" % utilVersion,
+  "com.twitter" %% "util-core" % utilVersion,
+  "com.twitter" %% "util-app" % utilVersion,
+  "com.twitter" %% "util-logging" % utilVersion,
+  // finagle
+  "com.twitter" %% "finagle-core" % finagleVersion,
   // scalaz
   "org.scalaz" %% "scalaz-core" % scalazVersion
 )
