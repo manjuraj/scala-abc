@@ -6,6 +6,8 @@ organization := "com.example"
 
 scalaVersion := "2.10.5"
 
+val guavaVersion = "18.0"
+
 val configVersion = "1.2.1"
 
 val scalazVersion = "7.1.3"
@@ -15,6 +17,8 @@ val utilVersion = "6.24.0"
 val finagleVersion = "6.25.0"
 
 libraryDependencies ++= Seq(
+  // guava
+  "com.google.guava" % "guava" % guavaVersion,
   // typesafe config
   "com.typesafe" % "config" % configVersion,
   // twitter util-*
