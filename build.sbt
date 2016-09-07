@@ -4,25 +4,17 @@ version := "1.0.0"
 
 organization := "com.example"
 
-scalaVersion := "2.10.5"
-
-val guavaVersion = "18.0"
+scalaVersion := "2.10.6"
 
 val configVersion = "1.2.1"
 
-val scalazVersion = "7.1.3"
+val utilVersion = "6.34.0"
 
-val utilVersion = "6.24.0"
+val finagleVersion = "6.35.0"
 
-val finagleVersion = "6.25.0"
+val scalazVersion = "7.2.5"
 
-val playVersion = "2.3.9"
-
-libraryDependencies ++= Seq(
-  // play
-  "com.typesafe.play" %% "play-json" % playVersion,
-  // guava
-  "com.google.guava" % "guava" % guavaVersion,
+libraryDependencies ++= List(
   // typesafe config
   "com.typesafe" % "config" % configVersion,
   // twitter util-*
@@ -35,14 +27,14 @@ libraryDependencies ++= Seq(
   "org.scalaz" %% "scalaz-core" % scalazVersion
 )
 
-resolvers ++= Seq(
+resolvers ++= List(
   "Typesafe Releases" at "http://repo.typesafe.com/typesafe/releases/",
   "Typesafe Snapshots" at "http://repo.typesafe.com/typesafe/snapshots/",
   "Twitter" at "http://maven.twttr.com",
   Resolver.mavenLocal
 )
 
-scalacOptions ++= Seq(
+scalacOptions ++= List(
   "-deprecation",
   "-feature",
   "-unchecked"
