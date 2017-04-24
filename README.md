@@ -1,6 +1,6 @@
 ## scala-abc
 
-Skeleton scala project with sbt
+Skeleton scala project with sbt. This skeleton uses scala 2.11.8 and sbt 0.13.15
 
 ## Build
 
@@ -11,7 +11,7 @@ sbt run
 Or,
 sbt 'run-main com.example.Main'
 Or,
-java -jar target/scala-2.10/abc-assembly-1.0.0.jar
+java -jar target/scala-2.11/abc-assembly-1.0.0.jar
 ```
 
 ## References

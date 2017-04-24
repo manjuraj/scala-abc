@@ -1,41 +1,47 @@
-name := "abc"
+lazy val root = Project(id = "abc", base = file("."))
+  .settings(
+    name := "abc",
+    version := "1.0.0",
+    organization := "com.example",
+    scalaVersion := "2.11.8",
+    libraryDependencies ++= List(
+      "com.typesafe" % "config" % versions.config,
+      "com.twitter" %% "util-core" % versions.util,
+      "com.twitter" %% "util-app" % versions.util,
+      "com.twitter" %% "util-logging" % versions.util,
+      "com.twitter" %% "finagle-core" % versions.finagle,
+      "org.scalaz" %% "scalaz-core" % versions.scalaz
+    ),
+    resolvers ++= {
+      val typesafeUrl = "http://repo.typesafe.com/typesafe"
+      List(
+        Resolver.mavenLocal,
+        "Typesafe Releases" at s"$typesafeUrl/releases/",
+        "Typesafe Snapshots" at s"$typesafeUrl/snapshots/"
+      )
+    },
+    scalacOptions ++= List(
+      "-deprecation",
+      "-encoding", "UTF-8",
+      "-feature",
+      "-language:existentials",
+      "-language:higherKinds",
+      "-language:implicitConversions",
+      "-unchecked",
+      "-Xfatal-warnings",
+      //"-Xlint",
+      //"-Yno-adapted-args",
+      "-Ywarn-dead-code",
+      //"-Ywarn-value-discard",
+      "-Xfuture"
+      //"-Yno-predef"
+      //"-Yno-imports"
+    )
+  )
 
-version := "1.0.0"
-
-organization := "com.example"
-
-scalaVersion := "2.10.6"
-
-val configVersion = "1.2.1"
-
-val utilVersion = "6.34.0"
-
-val finagleVersion = "6.35.0"
-
-val scalazVersion = "7.2.5"
-
-libraryDependencies ++= List(
-  // typesafe config
-  "com.typesafe" % "config" % configVersion,
-  // twitter util-*
-  "com.twitter" %% "util-core" % utilVersion,
-  "com.twitter" %% "util-app" % utilVersion,
-  "com.twitter" %% "util-logging" % utilVersion,
-  // finagle
-  "com.twitter" %% "finagle-core" % finagleVersion,
-  // scalaz
-  "org.scalaz" %% "scalaz-core" % scalazVersion
-)
-
-resolvers ++= List(
-  "Typesafe Releases" at "http://repo.typesafe.com/typesafe/releases/",
-  "Typesafe Snapshots" at "http://repo.typesafe.com/typesafe/snapshots/",
-  "Twitter" at "http://maven.twttr.com",
-  Resolver.mavenLocal
-)
-
-scalacOptions ++= List(
-  "-deprecation",
-  "-feature",
-  "-unchecked"
-)
+lazy val versions = new {
+  val config = "1.3.1"
+  val util = "6.42.0"
+  val scalaz = "7.2.11"
+  val finagle = "6.43.0"
+}
