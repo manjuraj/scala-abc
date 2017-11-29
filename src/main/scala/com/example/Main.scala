@@ -1,7 +1,7 @@
 package com.example
 
-import com.twitter.logging.{ConsoleHandler, Level, LoggerFactory, Logger}
-import com.twitter.util.{Duration, TimerTask, Time, Timer}
+import com.twitter.logging.{ConsoleHandler, Level, Logger, LoggerFactory}
+import com.twitter.util.{Duration, Time, Timer, TimerTask}
 import com.twitter.conversions.time._
 import com.twitter.app.App
 
