@@ -3,7 +3,7 @@ lazy val root = Project(id = "abc", base = file("."))
     name := "abc",
     version := "1.0.0",
     organization := "com.example",
-    scalaVersion := "2.11.8",
+    scalaVersion := "2.11.11",
     libraryDependencies ++= List(
       "com.typesafe" % "config" % versions.config,
       "com.twitter" %% "util-core" % versions.util,
@@ -40,8 +40,8 @@ lazy val root = Project(id = "abc", base = file("."))
   )
 
 lazy val versions = new {
-  val config = "1.3.1"
-  val util = "6.42.0"
-  val scalaz = "7.2.11"
-  val finagle = "6.43.0"
+  val config = "1.3.2"
+  val util = "17.11.0"
+  val scalaz = "7.2.17"
+  val finagle = "17.11.0"
 }

@@ -1,6 +1,6 @@
 ## scala-abc
 
-Skeleton scala project with sbt. This skeleton uses scala 2.11.8 and sbt 1.0.4
+Skeleton scala project with sbt. This skeleton uses scala 2.11.11 and sbt 1.0.4
 
 ## Build
 
